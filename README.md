@@ -1,6 +1,6 @@
 # Cast Salty
-------
-A dead simple process for keeping secrets safe in source control. Based on [John Resig's](http://ejohn.org/about/) excellent [blog post](http://ejohn.org/blog/keeping-passwords-in-source-control/).
+
+A dead simple process for keeping secrets safe in git source control repos. Based on [John Resig's](http://ejohn.org/about/) excellent [blog post](http://ejohn.org/blog/keeping-passwords-in-source-control/).
 
 ### *To use in your project:*
 
@@ -10,11 +10,11 @@ A dead simple process for keeping secrets safe in source control. Based on [John
 
 ### *Using the Makefile:*
 
-##### Decrypt your file:  
+#### Decrypt your file:  
 1. `make decrypt`
 2. *type password when prompted*
 
-##### Encrypt your file:  
+#### Encrypt your file:  
 1. `make encrypt`  
 2. *type password when prompted*
 

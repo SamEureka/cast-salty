@@ -1,16 +1,18 @@
-.PHONY: _pwd_prompt decrypt_conf encrypt_conf
+.PHONY: _prompt decrypt encrypt
 
+# Set the file you want to en/decrypt here.
+# The example password is: !Q@W#E$R
 CONF_FILE=config/settings.json
 
 # 'private' task for echoing instructions
-_pwd_prompt:
-	@echo "Contact foo@example.com for the password."
+_prompt:
+	@echo "Contact crypt_keeper@example.com for the password."
 
-# to create conf/config.json
-decrypt_conf: _pwd_prompt
+# decrypt/create conf/config.json
+decrypt: _prompt
 	openssl cast5-cbc -d -in ${CONF_FILE}.cast5 -out ${CONF_FILE}
 	chmod 600 ${CONF_FILE}
 
-# for updating conf/config.json
-encrypt_conf: _pwd_prompt
+# encrypt/update conf/config.json
+encrypt: _prompt
 	openssl cast5-cbc -e -in ${CONF_FILE} -out ${CONF_FILE}.cast5
